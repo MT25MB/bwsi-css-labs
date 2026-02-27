@@ -65,5 +65,25 @@ def test_invalid_operation():
     ):
         simple_calculator("", 5, 3)  # empty op
 
+
+def test_main_flow(monkeypatch, capsys):
+    # simulate user entering two numbers and an operation
+    inputs = iter(["5", "4", "multiply"])
+    monkeypatch.setattr("builtins.input", lambda prompt="": next(inputs))
+    from labs.lab_1.lab_1b import main
+    main()
+    captured = capsys.readouterr()
+    assert "Simple Calculator" in captured.out
+    assert "result" in captured.out
+
+
+def test_main_invalid_operation(monkeypatch, capsys):
+    inputs = iter(["1", "2", "foo", "add"])
+    monkeypatch.setattr("builtins.input", lambda prompt="": next(inputs))
+    from labs.lab_1.lab_1b import main
+    main()
+    captured = capsys.readouterr()
+    assert "pls choose" in captured.out
+
 if __name__ == "__main__":
     pytest.main()

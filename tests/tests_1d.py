@@ -7,3 +7,14 @@ def test_two_sum():
     assert two_sum([3, 3], 6) == [0, 1]  # duplicates
     assert two_sum([-1, -2, -3, -4, -5], -8) == [2, 4]  # negatives
     assert two_sum([0, 4, 3, 0], 0) == [0, 3]          # Test for zeroes in the list
+
+
+def test_main_runs(capsys):
+    from labs.lab_1.lab_1d import main
+    main()
+    captured = capsys.readouterr()
+    assert "Indices of the two numbers" in captured.out
+
+
+def test_no_solution():
+    assert two_sum([1,2,3], 7) == []

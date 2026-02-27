@@ -10,3 +10,10 @@ def test_max_subarray_sum():
     assert max_subarray_sum([5,4,-1,7,8]) == 23           # mostly positive
     assert max_subarray_sum([-2,1]) == 1                   # neg+pos pair
     assert max_subarray_sum([-2,-1]) == -1                # two negatives
+
+
+def test_main_runs(capsys):
+    from labs.lab_1.lab_1c import main
+    main()
+    captured = capsys.readouterr()
+    assert "Maximum subarray sum" in captured.out
