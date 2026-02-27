@@ -16,7 +16,8 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     numbers and returns the result.
 
     Args:
-        operation (str): The operation to perform ("add", "subtract", "multiply", "divide").
+        operation (str): The operation to perform. Choices are
+            "add", "subtract", "multiply", or "divide".
         num1 (float): The first number.
         num2 (float): The second number.
 
@@ -70,7 +71,10 @@ def main():
         if operation in ["add", "subtract", "multiply", "divide"]:
             workingoperation = True
         else:
-            print("pls choose from one of the options and make sure you spell it correctly")
+            print(
+                "pls choose from one of the options and make sure you "
+                "spell it correctly"
+            )
 
     # I already fixed the issue with invalid inputs for the operation when
     # fixing the issue with invalid inputs for the numbers, haha im two steps

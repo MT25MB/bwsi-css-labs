@@ -1,13 +1,13 @@
 """
 lab_1c.py
 
-Given a list of numbers, return the maximum sum of any contiguous subarray of 
-# the list.
+Given a list of numbers, return the maximum sum of any contiguous
+subarray of the list.
 
 Do not assume anything. Account for all edge cases.
 
 Derived from LeetCode problem:
-# https://leetcode.com/problems/maximum-subarray/ (leetcode medium)
+https://leetcode.com/problems/maximum-subarray/ (leetcode medium)
 """
 
 # TODO: Find and resolve the bug in the following implementation. Create unit tests to verify your fix.
