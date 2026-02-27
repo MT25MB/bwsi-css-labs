@@ -36,8 +36,10 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         else:
             raise ValueError("Cannot divide by zero.")
     else:
-        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
-
+            raise ValueError(
+                "Invalid operation. Please choose from 'add', 'subtract', "
+                "'multiply', or 'divide'."
+            )
 def main():
     
     print("===== Simple Calculator =====")
@@ -70,7 +72,9 @@ def main():
         else:
             print("pls choose from one of the options and make sure you spell it correctly")
 
-    # I already fixed the issue with invalid inputs for the operation when fixing the issue with invalid inputs for the numbers, haha im two steps ahead >:) -Milan
+    # I already fixed the issue with invalid inputs for the operation when
+    # fixing the issue with invalid inputs for the numbers, haha im two steps
+    # ahead >:) -Milan
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
