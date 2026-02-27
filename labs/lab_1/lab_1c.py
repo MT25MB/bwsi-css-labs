@@ -10,7 +10,8 @@ Derived from LeetCode problem:
 https://leetcode.com/problems/maximum-subarray/ (leetcode medium)
 """
 
-# TODO: Find and resolve the bug in the following implementation. Create unit tests to verify your fix.
+# TODO: Find and resolve the bug in the following implementation.
+#       Create unit tests to verify your fix.
 def max_subarray_sum(nums: list[int]) -> int:
     """
     Function that takes in a list of integers and returns the maximum sum of
