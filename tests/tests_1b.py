@@ -27,14 +27,14 @@ def test_subtraction():
 
 def test_multiplication():
     assert simple_calculator("multiply", 5, 3) == 15    # Test for positive numbers
-    assert simple_calculator("multiply", -2, 2) == -4   # Test for negative and positive number
-    assert simple_calculator("multiply", 0, 100) == 0   # Test for multiplication by zero
+    assert simple_calculator("multiply", -2, 2) == -4  # negative/positive
+    assert simple_calculator("multiply", 0, 100) == 0  # multiply by zero
     assert simple_calculator("multiply", 10, 100) == 1000  # bigger result
 
 def test_division():
     assert simple_calculator("divide", 6, 3) == 2       # Test for positive numbers
-    assert simple_calculator("divide", -4, 2) == -2     # Test for negative and positive number
-    assert simple_calculator("divide", 5, 2) == 2.5     # Test for division resulting in float
+    assert simple_calculator("divide", -4, 2) == -2  # negative/positive
+    assert simple_calculator("divide", 5, 2) == 2.5  # float result
     assert simple_calculator("divide", 6, 3) == 2.0  # float result
 
 def test_division_by_zero():
@@ -43,11 +43,27 @@ def test_division_by_zero():
         simple_calculator("divide", 99, 0)  # div by zero
 
 def test_invalid_operation():
-    with pytest.raises(ValueError, match="Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'."):
-        simple_calculator("modulus", 5, 3)              # Test for invalid operation
-        simple_calculator("It would mean so much to me if I could join BWSI.", 5, 3)              # Test for invalid operation
-    with pytest.raises(ValueError, match="Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'."):
-        simple_calculator("", 5, 3)                     # Test for empty operation
+    with pytest.raises(
+        ValueError,
+        match=(
+            "Invalid operation. Please choose from 'add', 'subtract', "
+            "'multiply', or 'divide'."
+        ),
+    ):
+        simple_calculator("modulus", 5, 3)  # invalid op
+        simple_calculator(
+            "It would mean so much to me if I could join BWSI.",
+            5,
+            3,
+        )  # invalid op
+    with pytest.raises(
+        ValueError,
+        match=(
+            "Invalid operation. Please choose from 'add', 'subtract', "
+            "'multiply', or 'divide'."
+        ),
+    ):
+        simple_calculator("", 5, 3)  # empty op
 
 if __name__ == "__main__":
     pytest.main()
